@@ -19,3 +19,12 @@ Install via composer `composer require jflepp/picofiletime`
 ~~~ twig
 {{ current_page.meta.creation_date }}
 ~~~
+
+### Configuration
+PicoFileTime provides no additional configuration, but you can use Picos inbuilt configuration to sort pages according to their creation date:
+
+~~~ yaml
+pages_order_by_meta: creation_date
+pages_order_by: meta
+pages_order: desc
+~~~
