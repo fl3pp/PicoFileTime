@@ -11,11 +11,11 @@
 <h1>Page information</h1>
 Title: {{ current_page.title }}<br>
 Url: <a href="{{ current_page.url }}">{{ current_page.url }}</a><br>
-Creation date: {{ current_page.meta.date }}<br>
+Creation date: {{ current_page.meta.creation_date }}<br>
 Pages:<br>
 <ul>
 {% for page in pages %}
-    <li>{{ page.id }} - <a href="{{ page.url }}">{{ page.url }}</a></li>
+    <li>{{ page.id }} - <a href="{{ page.url }}">{{ page.url }}</a> - {{ page.meta.creation_date }}</li>
 {% endfor %}
 </ul>
 Other Languages:<br>
@@ -24,9 +24,8 @@ Other Languages:<br>
     <li>{{ lang }} - <a href="{{ page }}">{{ page }}</a></li>
 {% endfor %}
 </ul>
-Previous Page: {{ prev_page.title }} - <a href="{{ prev_page.url }}">{{ prev_page.url }}</a><br>
-Next Page: {{ next_page.title }} - <a href="{{ next_page.url }}">{{ next_page.url }}</a><br>
-Index Page: {{ index_page.title }} - <a href="{{ index_page.url }}">{{ index_page.url }}</a>
+Previous Page: {{ prev_page.title }} - <a href="{{ prev_page.url }}">{{ prev_page.url }}</a> - {{ prev_page.meta.creation_date }}<br>
+Next Page: {{ next_page.title }} - <a href="{{ next_page.url }}">{{ next_page.url }}</a> - {{ next_page.meta.creation_date }}<br>
 <hr>
 
 <h1>Page content</h1>

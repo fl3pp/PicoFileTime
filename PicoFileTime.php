@@ -2,21 +2,25 @@
 
 class PicoFileTime extends AbstractPicoPlugin {
     private $plugin;
-
-    function __construct($pico) {
-        $this->plugin = new \PicoFileTime\Plugin();        
-        parent::__construct($pico);
-    }
-
-    public function onMetaParsed(array &$meta)
-    {
-        
-    }
-
     
-    public function onSinglePageLoaded() {
+    public function onConfigLoaded(&$config) {
+        $this->plugin = new \PicoFileTime\Plugin(
+            $config,
+            new \PicoFileTime\FileSystemWrapper);        
+    }
 
+    private $url;
+    public function onRequestUrl($url) {
+        $this->url = $url;
     }
     
+    public function onMetaParsed(&$meta) {
+        $meta['creation_date'] = $this->plugin->getCreationDate($this->url);
+    }
+    
+    
+    public function onSinglePageLoaded(&$page) {
+        $page['meta']['creation_date'] = $this->plugin->getCreationDate($page['id']);
+    }
     
 }

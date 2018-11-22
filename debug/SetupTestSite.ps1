@@ -13,7 +13,7 @@ New-Item -ItemType Directory $appDirectory;
 cd $appDirectory;
 
 composer create-project picocms/pico-composer .
-composer require jflepp/picofiletime dev-master
+composer require jflepp/picofiletime 0.0.1
 
 Copy-Item $pluginDirectory\* $appDirectory\plugins\picofiletime -Recurse -Force
 
