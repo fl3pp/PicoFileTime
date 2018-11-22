@@ -1,0 +1,17 @@
+{
+    "name": "jflepp/picofiletime",
+    "description": "A plugin for Pico to set the page creation date from the last write of the file",
+    "type": "pico-plugin",
+    "license": "unlicense",
+    "require": {},
+    "autoload": {
+        "psr-4": { 
+            "PicoFileTime\\": "src/",
+            "PicoFileTime\\Test\\": "tests/"
+        },
+		"classmap": ["PicoFileTime.php"]
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.4"
+    }
+}
