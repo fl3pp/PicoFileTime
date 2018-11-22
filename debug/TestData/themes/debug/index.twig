@@ -1,0 +1,36 @@
+<html>
+<head>
+<style>
+    body {
+        font-family: 'Consolas'
+    }
+</style>
+</head>
+<body>
+
+<h1>Page information</h1>
+Title: {{ current_page.title }}<br>
+Url: <a href="{{ current_page.url }}">{{ current_page.url }}</a><br>
+Creation date: {{ current_page.meta.date }}<br>
+Pages:<br>
+<ul>
+{% for page in pages %}
+    <li>{{ page.id }} - <a href="{{ page.url }}">{{ page.url }}</a></li>
+{% endfor %}
+</ul>
+Other Languages:<br>
+<ul>
+{% for lang,page in other_languages %}
+    <li>{{ lang }} - <a href="{{ page }}">{{ page }}</a></li>
+{% endfor %}
+</ul>
+Previous Page: {{ prev_page.title }} - <a href="{{ prev_page.url }}">{{ prev_page.url }}</a><br>
+Next Page: {{ next_page.title }} - <a href="{{ next_page.url }}">{{ next_page.url }}</a><br>
+Index Page: {{ index_page.title }} - <a href="{{ index_page.url }}">{{ index_page.url }}</a>
+<hr>
+
+<h1>Page content</h1>
+{{ content }}
+
+</body>
+</html>

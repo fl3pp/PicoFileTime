@@ -1,0 +1,5 @@
+---
+title: news
+---
+
+Main Page

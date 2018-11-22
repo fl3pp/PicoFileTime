@@ -8,6 +8,15 @@ class PicoFileTime extends AbstractPicoPlugin {
         parent::__construct($pico);
     }
 
+    public function onMetaParsed(array &$meta)
+    {
+        
+    }
+
+    
+    public function onSinglePageLoaded() {
+
+    }
     
     
 }
