@@ -20,7 +20,9 @@ class PicoFileTime extends AbstractPicoPlugin {
     
     
     public function onSinglePageLoaded(&$page) {
-        $page['meta']['creation_date'] = $this->plugin->getCreationDate($page['id']);
+        if (!isset($page['meta']['creation_date'])) {
+            $page['meta']['creation_date'] = $this->plugin->getCreationDate($page['id']);
+        }
     }
     
 }
