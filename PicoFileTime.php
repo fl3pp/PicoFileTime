@@ -1,6 +1,7 @@
 <?php
 
 class PicoFileTime extends AbstractPicoPlugin {
+    const API_VERSION = 2;
     private $plugin;
     
     public function onConfigLoaded(&$config) {
